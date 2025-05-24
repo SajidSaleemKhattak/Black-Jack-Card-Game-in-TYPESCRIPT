@@ -1,5 +1,6 @@
 "use strict";
 var _a, _b, _c;
+Object.defineProperty(exports, "__esModule", { value: true });
 // Basic TypeScript example
 function greet(name) {
     return `Hello, ${name}! Welcome to TypeScript!`;
@@ -132,4 +133,34 @@ console.log(result3);
 let func_multiply = (param1, param2) => {
     return param1 * param2;
 };
-let func_complex_calc = () => { };
+let func_complex_calc = (funcs, values) => {
+    return funcs.map((fn, i) => fn(...values[i]));
+};
+let result4 = func_complex_calc([func_divide, func_multiply], [
+    [24, 35],
+    [78, 56],
+]);
+console.log(result4);
+let bmw = {
+    brand: "bmw",
+    model: 2023,
+    accidental: false,
+    mileage: (td, fd) => {
+        return td - fd;
+    },
+};
+console.log(bmw);
+let secondMileage = bmw.mileage(23, 45);
+console.log(secondMileage);
+let person1 = {
+    name: "Sajid",
+    age: 24,
+};
+let manager = {
+    name: "HI MANAAGER",
+    age: 22,
+    managers: ["HI", "Bye"],
+    brand: "kjk",
+    model: 213,
+    mileage: (td, fd) => td - fd,
+};

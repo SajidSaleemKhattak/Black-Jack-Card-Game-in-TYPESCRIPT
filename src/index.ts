@@ -1,3 +1,5 @@
+import { Interface } from "readline";
+
 // Basic TypeScript example
 function greet(name: string): string {
   return `Hello, ${name}! Welcome to TypeScript!`;
@@ -164,4 +166,70 @@ let func_multiply = (param1: number, param2: number): number => {
   return param1 * param2;
 };
 
-let func_complex_calc =()=>{}
+let func_complex_calc = (
+  funcs: ((a: number, b: number) => number)[],
+  values: [number, number][]
+): number[] => {
+  return funcs.map((fn, i) => fn(...values[i]));
+};
+
+let result4 = func_complex_calc(
+  [func_divide, func_multiply],
+  [
+    [24, 35],
+    [78, 56],
+  ]
+);
+
+console.log(result4);
+
+// Advaned FUNCTION Types
+// 1 REST PARAMETER
+
+// Higher Order Functions
+
+// INTERFACES
+
+interface Cars {
+  brand: string;
+  model: number;
+  accidental?: boolean;
+  mileage?: (param1: number, param2: number) => number;
+}
+
+let bmw: Cars = {
+  brand: "bmw",
+  model: 2023,
+  accidental: false,
+  mileage: (td: number, fd: number) => {
+    return td - fd;
+  },
+};
+
+console.log(bmw);
+
+let secondMileage = bmw.mileage(23, 45);
+console.log(secondMileage);
+
+interface Employees {
+  name: string;
+  age: number;
+}
+
+let person1: Employees = {
+  name: "Sajid",
+  age: 24,
+};
+
+interface Manager extends Employees, Cars {
+  managers: string[];
+}
+
+let manager: Manager = {
+  name: "HI MANAAGER",
+  age: 22,
+  managers: ["HI", "Bye"],
+  brand: "kjk",
+  model: 213,
+  mileage: (td, fd) => td - fd,
+};
