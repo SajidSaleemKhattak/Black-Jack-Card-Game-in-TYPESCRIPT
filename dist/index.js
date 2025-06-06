@@ -126,6 +126,10 @@ let func_concate = (firstName, lastname, middlename) => {
     }
     return firstName + lastname;
 };
+let anyvar = 22;
+console.log(anyvar);
+anyvar = "Sajid";
+console.log(anyvar);
 const result2 = func_concate("Sajid", "Saleem", "Khattak");
 console.log(result2);
 const result3 = func_concate("Sajid", "Saleem");
@@ -164,3 +168,15 @@ let manager = {
     model: 213,
     mileage: (td, fd) => td - fd,
 };
+let literal4;
+// GENERICS
+function add(param1, param2, param3) {
+    if (param1) {
+        param3;
+        return param2;
+    }
+    else
+        return param2;
+}
+const result_of1 = add("Its a String", 10, "Another String");
+console.log(result_of1);

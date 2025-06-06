@@ -155,6 +155,10 @@ let func_concate = (
   }
   return firstName + lastname;
 };
+let anyvar: number | string = 22;
+console.log(anyvar);
+anyvar = "Sajid";
+console.log(anyvar);
 
 const result2 = func_concate("Sajid", "Saleem", "Khattak");
 console.log(result2);
@@ -194,14 +198,14 @@ interface Cars {
   brand: string;
   model: number;
   accidental?: boolean;
-  mileage?: (param1: number, param2: number) => number;
+  mileage: (param1: number, param2: number) => number;
 }
 
 let bmw: Cars = {
   brand: "bmw",
   model: 2023,
   accidental: false,
-  mileage: (td: number, fd: number) => {
+  mileage: (td: number, fd: number): number => {
     return td - fd;
   },
 };
@@ -233,3 +237,16 @@ let manager: Manager = {
   model: 213,
   mileage: (td, fd) => td - fd,
 };
+
+let literal4: "Hi " | "Hello" | 10;
+
+// GENERICS
+function add<Q, W>(param1: Q, param2: W, param3: Q): W {
+  if (param1) {
+    param3;
+    return param2;
+  } else return param2;
+}
+
+const result_of1 = add<string, number>("Its a String", 10, "Another String");
+console.log(result_of1);
