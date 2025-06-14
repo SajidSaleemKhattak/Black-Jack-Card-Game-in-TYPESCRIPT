@@ -1,5 +1,3 @@
-import { Interface } from "readline";
-
 // Basic TypeScript example
 function greet(name: string): string {
   return `Hello, ${name}! Welcome to TypeScript!`;
@@ -250,3 +248,11 @@ function add<Q, W>(param1: Q, param2: W, param3: Q): W {
 
 const result_of1 = add<string, number>("Its a String", 10, "Another String");
 console.log(result_of1);
+
+// NOW ALIASES
+
+type tuples = [number, number];
+
+function anything(p1: tuples, p2: tuples): tuples {
+  return [p1[1], p2[0]];
+}

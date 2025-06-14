@@ -180,3 +180,4 @@ function add(param1, param2, param3) {
 }
 const result_of1 = add("Its a String", 10, "Another String");
 console.log(result_of1);
+// NOW ALIASES
